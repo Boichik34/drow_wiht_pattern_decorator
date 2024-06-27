@@ -1,7 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from turtle import *
-import parser
+import color_parser
 
 
 def draw(fun):
@@ -49,15 +49,14 @@ class DefaultTurtle(ATurtle, RawTurtle):
 
 
 class ATurtleDecorator(ABC):
-    def get_back(self, state): pass
 
     def add_width(self, state): pass
 
     def abate_width(self, state): pass
 
-    def add_red(self, state): pass
+    def add_color(self, state): pass
 
-    def remove_red(self, state): pass
+    def above_color(self, state): pass
 
 
 class WidthDecorator(RawTurtle, ATurtleDecorator):
@@ -86,16 +85,16 @@ class RedColorDecorator(RawTurtle, ATurtleDecorator):
         self.pen(turtle.pen())
 
     @draw
-    def add_red(self, state):
-        colors = parser.red_parser(self.fillcolor())
+    def add_color(self, state):
+        colors = color_parser.red_parser(self.fillcolor())
         if colors is False:
             return False
         else:
             self.fillcolor(colors)
 
     @draw
-    def abate_red(self, state):
-        colors = parser.red_abate_parser(self.fillcolor())
+    def abate_color(self, state):
+        colors = color_parser.red_abate_parser(self.fillcolor())
         if colors is False:
             return False
         else:
@@ -109,16 +108,16 @@ class BlueColorDecorator(RawTurtle, ATurtleDecorator):
         self.pen(turtle.pen())
 
     @draw
-    def add_blue(self, state):
-        colors = parser.blue_parser(self.fillcolor())
+    def add_color(self, state):
+        colors = color_parser.blue_parser(self.fillcolor())
         if colors is False:
             return False
         else:
             self.fillcolor(colors)
 
     @draw
-    def abate_blue(self, state):
-        colors = parser.blue_abate_parser(self.fillcolor())
+    def abate_color(self, state):
+        colors = color_parser.blue_abate_parser(self.fillcolor())
         if colors is False:
             return False
         else:
@@ -132,16 +131,16 @@ class GreenColorDecorator(RawTurtle, ATurtleDecorator):
         self.pen(turtle.pen())
 
     @draw
-    def add_green(self, state):
-        colors = parser.green_parser(self.fillcolor())
+    def add_color(self, state):
+        colors = color_parser.green_parser(self.fillcolor())
         if colors is False:
             return False
         else:
             self.fillcolor(colors)
 
     @draw
-    def abate_green(self, state):
-        colors = parser.green_abate_parser(self.fillcolor())
+    def abate_color(self, state):
+        colors = color_parser.green_abate_parser(self.fillcolor())
         if colors is False:
             return False
         else:

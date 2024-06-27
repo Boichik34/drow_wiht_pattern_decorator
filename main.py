@@ -96,7 +96,7 @@ class Window(Tk):
 
     @check_state
     def __add_red(self):
-        result = RedColorDecorator(self.def_turtle).add_red(self.__state)
+        result = RedColorDecorator(self.def_turtle).add_color(self.__state)
         if result is False:
             showinfo(title='No city', message='краснее не бывает')
         else:
@@ -104,7 +104,7 @@ class Window(Tk):
 
     @check_state
     def __abate_red(self):
-        result = RedColorDecorator(self.def_turtle).abate_red(self.__state)
+        result = RedColorDecorator(self.def_turtle).abate_color(self.__state)
         if result is False:
             showinfo(title='No city', message='меньше не бывает')
         else:
@@ -112,7 +112,7 @@ class Window(Tk):
 
     @check_state
     def __abate_blue(self):
-        result = BlueColorDecorator(self.def_turtle).abate_blue(self.__state)
+        result = BlueColorDecorator(self.def_turtle).abate_color(self.__state)
         if result is False:
             showinfo(title='No city', message='меньше не бывает')
         else:
@@ -120,7 +120,7 @@ class Window(Tk):
 
     @check_state
     def __abate_green(self):
-        result = GreenColorDecorator(self.def_turtle).abate_green(self.__state)
+        result = GreenColorDecorator(self.def_turtle).abate_color(self.__state)
         if result is False:
             showinfo(title='No city', message='меньше не бывает')
         else:
@@ -128,7 +128,7 @@ class Window(Tk):
 
     @check_state
     def __add_blue(self):
-        result = BlueColorDecorator(self.def_turtle).add_blue(self.__state)
+        result = BlueColorDecorator(self.def_turtle).add_color(self.__state)
         if result is False:
             showinfo(title='No city', message='голубее не бывает')
         else:
@@ -136,7 +136,7 @@ class Window(Tk):
 
     @check_state
     def __add_green(self):
-        result = GreenColorDecorator(self.def_turtle).add_green(self.__state)
+        result = GreenColorDecorator(self.def_turtle).add_color(self.__state)
         if result is False:
             showinfo(title='No city', message='зеленей не будет')
         else:
